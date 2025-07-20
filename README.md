@@ -1,48 +1,34 @@
-# Guilherme Fernandes
+# Olá eu sou o Guilherme Fernandes!
 
-Um jovem apaixonado por tecnologia que achou sua paixão na programação e adora resolver problemas.
+## Sou um desenvolvedor FullStack! É um prazer enorme ter você por aqui! Não esquece de dar uma olhada nos projetos!!
 
-## Onde estudo
+<a href="https://github.com/guifeh">
+<img height="170cm" src="https://github-readme-stats.vercel.app/api?username=guifeh&show_icons=true">
+<img height="170cm" src="https://github-readme-stats.vercel.app/api?username=guifeh&show_icons=true&theme=dracula">
 
-Atualmente curso Análise e Desenvolvimento de Sistemas na FIAP em São Paulo, irei me formar no segundo semestre de 2025
-Sou Técnico em Informática pelo Colégio ENIAC, me formei em 2023
+## Minhas Habilidades:
+<div style="display: inline_block"><br>
+  <img align="center" alt="Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+  <img align="center" alt="Ts" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg">
+  <img align="center" alt="Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+  <img align="center" alt="Java" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg">
+  <img align="center" alt="Kotlin" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg">
+  <img align="center" alt="Bootstrap" height="30" width="40" src="https://skillicons.dev/icons?i=bootstrap">
+  <img align="center" alt="Docker" height="30" width="40" src="https://skillicons.dev/icons?i=docker">
+  <img align="center" alt="NodeJS" height="30" width="40" src="https://skillicons.dev/icons?i=nodejs">
+</div>
 
-## Áreas de Atuação
+  
+  ##
+ 
+<div> 
+  <a href="https://instagram.com/guifezin" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+  <a href = "mailto:contato.guigasparino4@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/guilherme-fernandesgn/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+  
+</div>
 
-- **Full Stack Web Developer**
-
-## Tecnologias
-
-- HTML
-- CSS
-- JavaScript
-- ReactJs
-- Angular
-- TypeScript
-- Vite
-- Node.js
-
-## Projetos Principais
-
-Aqui estão alguns dos meus projetos mais recentes:
-
-1. **ChallangeiFood**: Sistema backoffice para parceiros iFood, onde eu e meu grupo fomos convidados a apresentar o projeto na feira NEXT da faculdade FIAP.
-2. **codeconnect-feed**: O CodeConnect é uma rede social fictícia. A ideia principal é iniciar um projeto React utilizando o Vite e desbravar a componentização, o uso dos hooks e props para criação de uma página.
-3. **VidFlow**: Clone do youtube feito em JavaScript, feito como estudos para tratamentos de dado de uma API.
-
-*Você pode encontrar mais projetos navegando pelo meu repositório no GitHub.*
-
-## Contato
-
-- **Email**: guigasparino4@gmail.com
-- **LinkedIn**: [Guilherme Fernandes](https://www.linkedin.com/in/guilherme-fernandesgn/)
-
-## Curiosidades
-
-- Adoro academia
-- Gamer nas horas vagas
-- Adoro hambúrguer
-
----
-
-Obrigado por visitar o meu perfil! Fique à vontade para explorar meus projetos e entrar em contato se tiver alguma dúvida ou interesse em colaborar.
+![Snake Animation](https://github.com/guifeh/GuilhermeFernandes/blob/main/github-contribution-grid-snake-dark.svg?palette=github-dark)
