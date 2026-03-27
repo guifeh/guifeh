@@ -276,8 +276,8 @@
       <animate attributeName="opacity" values="0.85;1;0.85" dur="5s" begin="1.4s" repeatCount="indefinite"/>
     </circle>
     <line x1="297.8" y1="107.2" x2="281.0" y2="100.8" stroke="#a78bfa" stroke-width="0.5" opacity="0.25" stroke-dasharray="2 2"/>
-    <text x="281.0" y="103.8" text-anchor="end" fill="#a78bfa" font-size="9" font-family="monospace" opacity="0.2" filter="url(#label-glow)">CSS</text>
-    <text x="281.0" y="103.8" text-anchor="end" fill="#a78bfa" font-size="9" font-family="monospace" opacity="0.85">CSS</text>
+    <text x="281.0" y="103.8" text-anchor="end" fill="#a78bfa" font-size="9" font-family="monospace" opacity="0.2" filter="url(#label-glow)">Vite</text>
+    <text x="281.0" y="103.8" text-anchor="end" fill="#a78bfa" font-size="9" font-family="monospace" opacity="0.85">Vite</text>
     <circle cx="372.0" cy="136.2" r="2.5" fill="#00d4ff" opacity="0.85">
       <animate attributeName="opacity" values="0.85;1;0.85" dur="5s" begin="0.0s" repeatCount="indefinite"/>
     </circle>
@@ -294,8 +294,8 @@
       <animate attributeName="opacity" values="0.85;1;0.85" dur="5s" begin="1.4s" repeatCount="indefinite"/>
     </circle>
     <line x1="617.4" y1="137.2" x2="635.3" y2="135.5" stroke="#00d4ff" stroke-width="0.5" opacity="0.25" stroke-dasharray="2 2"/>
-    <text x="635.3" y="138.5" text-anchor="start" fill="#00d4ff" font-size="9" font-family="monospace" opacity="0.2" filter="url(#label-glow)">PostgreSQL</text>
-    <text x="635.3" y="138.5" text-anchor="start" fill="#00d4ff" font-size="9" font-family="monospace" opacity="0.85">PostgreSQL</text>
+    <text x="635.3" y="138.5" text-anchor="start" fill="#00d4ff" font-size="9" font-family="monospace" opacity="0.2" filter="url(#label-glow)">.NET</text>
+    <text x="635.3" y="138.5" text-anchor="start" fill="#00d4ff" font-size="9" font-family="monospace" opacity="0.85">.NET</text>
     <circle cx="645.3" cy="190.8" r="2.5" fill="#00d4ff" opacity="0.85">
       <animate attributeName="opacity" values="0.85;1;0.85" dur="5s" begin="2.0999999999999996s" repeatCount="indefinite"/>
     </circle>
