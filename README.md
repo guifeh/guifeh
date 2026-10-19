@@ -14,11 +14,6 @@
   <img src="./assets/generated/stats-card.svg" width="850" alt="GitHub stats: lifetime commit contributions, received stars, pull requests, issues and public repositories"/>
 </div>
 
-<p align="center">
-  Commits: all years recorded in the GitHub contribution graph. Stars: received across public repositories. Repos: public repositories owned by this account.<br/>
-  Updated automatically every 12 hours. Counts depend on the data accessible to GitHub Actions.
-</p>
-
 <br/>
 
 <div align="center">
