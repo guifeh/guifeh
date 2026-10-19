@@ -11,11 +11,11 @@
 <br/>
 
 <div align="center">
-  <img src="./assets/generated/stats-card.svg" width="850" alt="GitHub stats: commit contributions in the last 12 months, received stars, pull requests, issues and public repositories"/>
+  <img src="./assets/generated/stats-card.svg" width="850" alt="GitHub stats: lifetime commit contributions, received stars, pull requests, issues and public repositories"/>
 </div>
 
 <p align="center">
-  Commits: last 12 months recorded in the GitHub contribution graph. Stars: received across public repositories. Repos: public repositories owned by this account.<br/>
+  Commits: all years recorded in the GitHub contribution graph. Stars: received across public repositories. Repos: public repositories owned by this account.<br/>
   Updated automatically every 12 hours. Counts depend on the data accessible to GitHub Actions.
 </p>
 
