@@ -8,6 +8,7 @@ on:
     paths:
       - "config.yml"
       - "generator/**"
+      - ".github/workflows/generate-profile.yml"
 
 jobs:
   generate:
@@ -29,7 +30,8 @@ jobs:
 
       - name: Generate SVGs
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Classic PAT with read:user includes private/internal contribution counts.
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
         run: python -m generator.main
 
       - name: Commit and push if changed
