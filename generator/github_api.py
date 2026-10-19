@@ -71,39 +71,24 @@ class GitHubAPI:
         return data["data"]["user"]
 
     def _fetch_stats_graphql(self) -> dict:
-        """Fetch lifetime commit contributions and current public repository stats."""
+        """Fetch commits from the last 12 months and current public repository stats."""
         user = self._graphql_user("""
         query($username: String!) {
           user(login: $username) {
             pullRequests { totalCount }
             issues { totalCount }
             repositories(ownerAffiliations: OWNER, privacy: PUBLIC) { totalCount }
-            contributionsCollection { contributionYears }
+            contributionsCollection { totalCommitContributions }
           }
         }
         """)
-        years = user["contributionsCollection"]["contributionYears"]
-        total_commits = 0
-        if years:
-            # GitHub limits each contribution collection to a one-year interval.
-            fields = "\n".join(
-                f'y{year}: contributionsCollection('
-                f'from: "{year}-01-01T00:00:00Z", to: "{year}-12-31T23:59:59Z") '
-                '{ totalCommitContributions }'
-                for year in years
-            )
-            history = self._graphql_user(
-                'query($username: String!) { user(login: $username) { ' + fields + ' } }'
-            )
-            total_commits = sum(history[f"y{year}"]["totalCommitContributions"] for year in years)
-
         total_stars = sum(
             repo["stargazers_count"]
             for page in self._paginate_repos()
             for repo in page
         )
         return {
-            "commits": total_commits,
+            "commits": user["contributionsCollection"]["totalCommitContributions"],
             "stars": total_stars,
             "prs": user["pullRequests"]["totalCount"],
             "issues": user["issues"]["totalCount"],
