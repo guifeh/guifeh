@@ -59,69 +59,55 @@ class GitHubAPI:
             return self._fetch_stats_graphql()
         return self._fetch_stats_rest()
 
+    def _graphql_user(self, query: str) -> dict:
+        resp = self._request(
+            "POST", self.GRAPHQL_URL,
+            json={"query": query, "variables": {"username": self.username}},
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("errors"):
+            raise ValueError(f"GraphQL errors: {data['errors']}")
+        return data["data"]["user"]
+
     def _fetch_stats_graphql(self) -> dict:
-        """Fetch stats via GraphQL for accurate counts including private contributions."""
-        query = """
+        """Fetch lifetime commit contributions and current public repository stats."""
+        user = self._graphql_user("""
         query($username: String!) {
           user(login: $username) {
-            repositoriesContributedTo(contributionTypes: [COMMIT, PULL_REQUEST, ISSUE]) {
-              totalCount
-            }
-            pullRequests {
-              totalCount
-            }
-            issues {
-              totalCount
-            }
-            repositories(ownerAffiliations: OWNER, first: 100) {
-              totalCount
-              nodes {
-                stargazerCount
-              }
-            }
-            contributionsCollection {
-              totalCommitContributions
-              restrictedContributionsCount
-            }
+            pullRequests { totalCount }
+            issues { totalCount }
+            repositories(ownerAffiliations: OWNER, privacy: PUBLIC) { totalCount }
+            contributionsCollection { contributionYears }
           }
         }
-        """
-        try:
-            resp = self._request(
-                "POST",
-                self.GRAPHQL_URL,
-                json={"query": query, "variables": {"username": self.username}},
+        """)
+        years = user["contributionsCollection"]["contributionYears"]
+        total_commits = 0
+        if years:
+            # GitHub limits each contribution collection to a one-year interval.
+            fields = "\n".join(
+                f'y{year}: contributionsCollection('
+                f'from: "{year}-01-01T00:00:00Z", to: "{year}-12-31T23:59:59Z") '
+                '{ totalCommitContributions }'
+                for year in years
             )
-            resp.raise_for_status()
-        except requests.exceptions.Timeout:
-            logger.warning("GraphQL request timed out, falling back to REST.")
-            return self._fetch_stats_rest()
-        except requests.exceptions.HTTPError as e:
-            logger.warning("GraphQL HTTP error (%s), falling back to REST.", e)
-            return self._fetch_stats_rest()
+            history = self._graphql_user(
+                'query($username: String!) { user(login: $username) { ' + fields + ' } }'
+            )
+            total_commits = sum(history[f"y{year}"]["totalCommitContributions"] for year in years)
 
-        data = resp.json()
-
-        if "errors" in data:
-            logger.warning("GraphQL errors: %s", data["errors"])
-            return self._fetch_stats_rest()
-
-        user = data["data"]["user"]
-        contrib = user["contributionsCollection"]
-        repos = user["repositories"]
-
-        total_stars = sum(n["stargazerCount"] for n in repos["nodes"])
-        total_commits = (
-            contrib["totalCommitContributions"]
-            + contrib["restrictedContributionsCount"]
+        total_stars = sum(
+            repo["stargazers_count"]
+            for page in self._paginate_repos()
+            for repo in page
         )
-
         return {
             "commits": total_commits,
             "stars": total_stars,
             "prs": user["pullRequests"]["totalCount"],
             "issues": user["issues"]["totalCount"],
-            "repos": repos["totalCount"],
+            "repos": user["repositories"]["totalCount"],
         }
 
     def _fetch_stats_rest(self) -> dict:
